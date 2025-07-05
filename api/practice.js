@@ -41,7 +41,7 @@ app.use(express.json());
 
 
 // Playstore detail endpoint
-app.get("/playstore/appdetail", async (req, res) => {
+app.get("/appdetail", async (req, res) => {
   const { id } = req.query;
   if (!id) return res.status(400).json({ error: "App ID is required" });
 
@@ -54,7 +54,7 @@ app.get("/playstore/appdetail", async (req, res) => {
 });
  
 // Playstore Search
-app.get("/playstore/search", async (req, res) => {
+app.get("/search", async (req, res) => {
   const { query } = req.query;
 
   if (!query) return res.status(400).json({ error: "Query is required" });
@@ -133,7 +133,7 @@ app.get("/playstore/search", async (req, res) => {
 
 
 // Playstore Suggestion Endpoint
-app.get("/playstore/suggest", async (req, res) => {
+app.get("/suggest", async (req, res) => {
   const { term } = req.query;
 
   if (!term) return res.status(400).json({ error: "Term is required" });
